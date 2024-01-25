@@ -1,0 +1,30 @@
+<div class="container col-12 col-sm-8 mt-5 shadow p-4 pb-3" style="border-radius: 10px; background-color:rgb(188, 164, 125)">
+  <h2 class="fw-bold">Employee List</h2>
+  <table class="table table-secondary table-striped custom-table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Category</th>
+              <th>Gender</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let employee of employees">
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.mail_id }}</td>
+              <td>{{ employee.role }}</td>
+              <td>{{ employee.category }}</td>
+              <td>{{ employee.gender }}</td>
+              <td>
+                  <button (click)="updateEmployee(employee.id)" class="btn btn-info me-2">Update</button>
+                  <button (click)="deleteEmployee(employee.id)" class="btn btn-danger ms-1">Delete</button>             
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

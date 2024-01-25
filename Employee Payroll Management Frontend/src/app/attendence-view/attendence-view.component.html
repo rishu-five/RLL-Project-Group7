@@ -1,0 +1,24 @@
+<div  class="container col-12 col-sm-8 mt-5 shadow p-4 pb-3" style="border-radius: 10px; background-color:rgb(188, 164, 125)">
+  <h2 class="fw-bold">Attendance</h2>
+    <table class="table table-secondary table-striped custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendance of attendancedetails">
+          <td>{{ attendance.id }}</td>
+          <td>{{ attendance.date }}</td>
+          <td>{{ attendance.check_in }}</td>
+          <td>{{ attendance.check_out }}</td>
+          <td>{{ attendance.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

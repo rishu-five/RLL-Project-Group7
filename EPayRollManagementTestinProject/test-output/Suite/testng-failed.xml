@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Classes(failed)">
+    <classes>
+      <class name="com.EPayRollManagementTest.MainTest.EmployeeTestClass">
+        <methods>
+          <include name="myLeavesTest"/>
+          <include name="myAttendanceTest"/>
+          <include name="signOutTest"/>
+          <include name="invalidLoginCheck"/>
+          <include name="mySalaryTest"/>
+          <include name="validLoginCheck"/>
+          <include name="myTaskTest"/>
+        </methods>
+      </class> <!-- com.EPayRollManagementTest.MainTest.EmployeeTestClass -->
+      <class name="com.EPayRollManagementTest.MainTest.AdminTestClass">
+        <methods>
+          <include name="invalidLogin"/>
+          <include name="addEmployeeTest"/>
+          <include name="adminSalarayTest"/>
+          <include name="viewAllEmployeesUpdateAndDelete"/>
+          <include name="signout"/>
+          <include name="attendance"/>
+          <include name="leaveTest"/>
+          <include name="scheduleWorkTest"/>
+          <include name="validLogin"/>
+        </methods>
+      </class> <!-- com.EPayRollManagementTest.MainTest.AdminTestClass -->
+    </classes>
+  </test> <!-- Classes(failed) -->
+</suite> <!-- Failed suite [Suite] -->

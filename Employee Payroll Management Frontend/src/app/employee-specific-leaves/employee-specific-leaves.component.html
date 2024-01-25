@@ -1,0 +1,26 @@
+<div class="container col-12 col-sm-8 mt-5 shadow p-4 pb-3" style="border-radius: 10px; background-color:rgb(188, 164, 125)">
+  <h2 class="fw-bold">My leaves</h2>
+  <hr>
+  <table class="table table-warning table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Leave Type</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employeeLeave of employeeLeaves" class="align-middle">
+     
+        <td>{{ employeeLeave.id }}</td>
+        <td>{{ employeeLeave.leaveType }}</td>
+        <td>{{ employeeLeave.startDate}}</td>
+        <td>{{ employeeLeave.endDate }}</td>
+        <td>{{ employeeLeave.reason}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

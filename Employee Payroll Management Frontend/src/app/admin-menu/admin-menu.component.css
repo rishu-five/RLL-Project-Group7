@@ -1,0 +1,19 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdoSCx2-D6Oua5Zn1wsAjqROuZnIv2xi-5_VpUDUdb8hQSvryeSL_q9eeFA99alHLiJGc&usqp=CAU');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+#heading {
+    margin-top: 300px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-weight: bolder;
+}
+
+span {
+    color: rgb(253, 66, 14);
+}

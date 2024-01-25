@@ -1,0 +1,36 @@
+/* Styles for the Leave List section */
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #c01111;
+  }
+  
+  .leave-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .leave-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the Footer section */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

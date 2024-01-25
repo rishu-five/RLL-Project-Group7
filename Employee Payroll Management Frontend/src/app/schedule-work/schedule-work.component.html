@@ -1,0 +1,52 @@
+<div class="container row col-12">
+  <div class="container col-5 shadow order-2 me-0" style="border-radius: 20px;">
+    <h3 class="fw-bold text-center pt-2 text-dark">Schedule Work</h3>
+    <hr>
+    <form [formGroup]="WorkScheduleForm" class="p-4 shadow" style="backdrop-filter: blur(5px); border-radius: 20px;">
+      <div class="mb-1">
+        <label for="employeeId" class="form-label">Employee Id</label>
+        <input type="number" class="form-control" id="employeeId" formControlName="employee_id">
+      </div>
+      <div style="text-align: left;" [class]="errorMsgClass" class="mb-2"
+        *ngIf="WorkScheduleForm.get('employee_id')?.touched && WorkScheduleForm.get('employee_id')?.hasError('required')"
+        class="lead">
+        Employee Id required*
+      </div>
+      <div class="mb-1">
+        <label for="date_assigned" class="form-label">Date Assigned</label>
+        <input type="date" class="form-control" id="date_assigned" formControlName="date_assigned">
+      </div>
+      <div style="text-align: left;" [class]="errorMsgClass" class="mb-2"
+        *ngIf="WorkScheduleForm.get('date_assigned')?.touched && WorkScheduleForm.get('date_assigned')?.hasError('required')"
+        class="lead">
+        Date required*
+      </div>
+      <div class="mb-1">
+        <label for="is_work_assigned" class="form-label">Work Assigned</label>
+        <input type="text" class="form-control" id="is_work_assigned" formControlName="is_work_assigned">
+      </div>
+      <div style="text-align: left;" [class]="errorMsgClass" class="mb-2"
+        *ngIf="WorkScheduleForm.get('is_work_assigned')?.touched && WorkScheduleForm.get('is_work_assigned')?.hasError('required')"
+        class="lead">
+        Work required*
+      </div>
+      <div class="mb-1">
+        <label for="work_description" class="form-label">Work Description</label>
+        <input type="text" class="form-control" id="work_description" formControlName="work_description">
+      </div>
+      <div style="text-align: left;" [class]="errorMsgClass" class="mb-2"
+        *ngIf="WorkScheduleForm.get('work_description')?.touched && WorkScheduleForm.get('work_description')?.hasError('required')"
+        class="lead">
+        Work Description required*
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-warning mt-3 fw-bold text-danger lead" (click)="assignWork()"
+          [disabled]="WorkScheduleForm.invalid">Assign Work</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-5 order-1 ms-2">
+    <img src="https://www.workforcehub.com/wp-content/uploads/2018/11/bigstock-Calendar-With-Schedule-Plans-p-254459887-1.jpg" alt="Schedulework-image"
+      border="0" width="700" height="200" style="max-width: 400%; height: auto;">
+  </div>
+</div>

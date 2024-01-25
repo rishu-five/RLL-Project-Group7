@@ -1,0 +1,78 @@
+create database Employee_payroll_db;
+use Employee_payroll_db;
+
+CREATE TABLE `employee` (
+ `employee_id` int NOT NULL AUTO_INCREMENT,
+ `category` varchar(255) DEFAULT NULL,
+ `gender` varchar(255) DEFAULT NULL,
+ `mail_id` varchar(255) DEFAULT NULL,
+ `employee_name` varchar(255) DEFAULT NULL,
+ `role` varchar(255) DEFAULT NULL,
+ PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2564578 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `attendance` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `check_in` varchar(255) DEFAULT NULL,
+ `check_out` varchar(255) DEFAULT NULL,
+ `date` date DEFAULT NULL,
+ `status` varchar(255) DEFAULT NULL,
+ `employee_id` int DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `FKr7q0h8jfngkyybll6o9r3h9ua` (`employee_id`),
+ CONSTRAINT `FKr7q0h8jfngkyybll6o9r3h9ua` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `schedule_work` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `date_assigned` date DEFAULT NULL,
+ `is_work_assigned` varchar(255) DEFAULT NULL,
+ `work_description` varchar(255) DEFAULT NULL,
+ `employee_id` int DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `FKmgv777i618xbo21t062bdnk74` (`employee_id`),
+ CONSTRAINT `FKmgv777i618xbo21t062bdnk74` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `credentials` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `password` varchar(255) DEFAULT NULL,
+ `employee_id` int DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `UK_pf0l7gj425wer7kwbv9348qw6` (`employee_id`),
+ CONSTRAINT `FKbevx232cgk7ql42w8fmm9wv1y` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `salary` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `amount` varchar(255) DEFAULT NULL,
+ `salary_credited_date` date DEFAULT NULL,
+ `employee_id` int DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `FKnlnv3jbyvbiu8ci59r3btlk00` (`employee_id`),
+ CONSTRAINT `FKnlnv3jbyvbiu8ci59r3btlk00` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+CREATE TABLE `leaves` (
+ `id` int NOT NULL AUTO_INCREMENT,
+ `end_date` date DEFAULT NULL,
+ `leave_type` varchar(255) DEFAULT NULL,
+ `reason` varchar(255) DEFAULT NULL,
+ `start_date` date DEFAULT NULL,
+ `employee_id` int DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `FKoyaicpcjhq2kad5vgtlexcjjo` (`employee_id`),
+ CONSTRAINT `FKoyaicpcjhq2kad5vgtlexcjjo` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+select * from credentials;
+select * from employee;
+select * from leaves;
+select * from salary;
+select * from schedule_work;
+select * from attendance;

@@ -1,0 +1,42 @@
+/* Styles for the container and content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.con {
+  text-align: center;
+  padding: 20px;
+}
+
+.message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+a.login-link {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a.login-link:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for the image */
+.logo-image {
+  width: 200px;
+  height: 100px;
+  border-radius: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body style="background-color: rgb(150, 218, 150); margin: 0;">
+
+  <nav class="navbar bg-body-tertiary fixed-top" >
+    <div class="container-fluid" style="background-color:rgb(99, 107, 255) ;" >
+      <a class="navbar-brand" href="#"><b>Employee Payroll Management</b></a>
+      <b><button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#employeeMenuNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button></b>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="employeeMenuNavbar"
+        aria-labelledby="employeeMenuNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="employeeMenuNavbarLabel">
+            Employee Payroll Details
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item mt-3">
+              <a class="nav-link" routerLink="./" class="styleLinks">Home</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a class="nav-link" routerLink="profile" class="styleLinks">My Profile</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                routerLink="myLeaves"
+                class="styleLinks"
+                >My Leaves</a
+              >
+            </li>
+            <li class="nav-item mt-3">
+              <a class="nav-link" routerLink="viewAttendence" class="styleLinks">Attendence</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a class="nav-link" routerLink="viewSalary" class="styleLinks">Salary</a>
+            </li>
+            <li class="nav-item mt-3">
+              <a
+                class="nav-link"
+                routerLink="viewScheduledWorks"
+                routerLinkActive="active"
+                class="styleLinks"
+                >Scheduled Works</a
+              >
+            </li>
+            <li class="nav-item mt-3">
+              <a
+                class="nav-link"
+                routerLink="changePassword"
+                routerLinkActive="active"
+                class="styleLinks"
+                >changePassword</a
+              >
+            </li>
+            <button
+              type="button"
+              (click)="signOut()"
+              class="btn btn-primary mt-4"
+            >
+              Sign Out
+            </button>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Remove the following div with the welcome text -->
+   <div *ngIf="menu1" id="heading">
+    <h1>Welcome <span>  {{name}}</span> <i class="bi bi-universal-access"></i></h1>
+  </div> 
+
+  <router-outlet></router-outlet>
+
+</body>
+
+</html>
